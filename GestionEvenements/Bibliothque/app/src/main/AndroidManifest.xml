@@ -21,6 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".UpdateEventActivity" />
+        <activity android:name=".EventListActivity"></activity>
+        <activity android:name=".DeleteEventActivity"></activity>
+        <activity android:name=".EventListActivityFront"></activity>
+        <activity android:name=".ManageEventsActivity"></activity>
+        <activity android:name=".ParticipateActivity" />
+        <activity android:name=".ViewEventsActivity" />
     </application>
 
 </manifest>
