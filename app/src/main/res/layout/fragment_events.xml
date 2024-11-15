@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.slideshow.FavouriteFragment">
+    tools:context=".ui.Events.EventsFragment">
 
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/favourite"/>
+        android:text="Events"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

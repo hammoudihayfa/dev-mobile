@@ -7,19 +7,30 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.helene.booky.ui.home.HomeFragment"
+        android:name="tn.esprit.bibliothque.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.helene.booky.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_events"
+        android:name="tn.esprit.bibliothque.ui.Events.EventsFragment"
+        android:label="@string/events"
+        tools:layout="@layout/fragment_events" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.helene.booky.ui.slideshow.FavouriteFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_favourite" />
+        android:id="@+id/nav_favorites"
+        android:name="tn.esprit.bibliothque.ui.Favorites.FavoriteFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="tn.esprit.bibliothque.ui.Posts.PostsFragment"
+        android:label="@string/posts"
+        tools:layout="@layout/fragment_posts" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="tn.esprit.bibliothque.ui.Settings.SettingFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
