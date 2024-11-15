@@ -1,7 +1,10 @@
 package tn.esprit.bibliothque;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+
 import androidx.appcompat.widget.Toolbar;  // Importation correcte de androidx.appcompat.widget.Toolbar
 import tn.esprit.bibliothque.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -36,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+    public void logOut(View view) {
+        // Rediriger vers l'activité de connexion
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        // Terminer l'activité actuelle pour empêcher le retour
+        finish();
     }
 
     @Override

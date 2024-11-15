@@ -39,5 +39,9 @@
     <string name="helene">Helene</string>
     <string name="heleneboukhali_gmail_com">heleneboukhali@gmail.com</string>
     <string name="log_out">Log Out</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="send">Send</string>
+    <string name="change_password">Change Password</string>
+    <string name="reset">Reset</string>
 
 </resources>

@@ -24,4 +24,7 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
     }
 
+    public void resetpassword(View view) {
+        startActivity(new Intent(RegistrationActivity.this, ResetPasswordActivity.class));
+    }
 }

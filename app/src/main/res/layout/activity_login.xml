@@ -46,7 +46,7 @@
             android:backgroundTint="#cccccc"
             android:drawableLeft="@drawable/baseline_account_circle_24"
             android:drawablePadding="1dp"
-            android:hint="@string/email"
+            android:hint="@string/fullname"
             android:minHeight="48dp"
             android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +70,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextName"
             app:layout_constraintWidth_percent="0.8" />
     <TextView
+        android:onClick="resetpassword"
         android:id="@+id/passwordoublie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

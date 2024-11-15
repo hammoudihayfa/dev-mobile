@@ -29,7 +29,7 @@
 
         <!-- Ajoutez le bouton ici, au bas du NavigationView -->
         <Button
-            android:onClick="mainActivity"
+            android:onClick="logOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/log_out"
