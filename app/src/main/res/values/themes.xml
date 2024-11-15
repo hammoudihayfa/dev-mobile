@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.Bibliothéque" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <!-- Main theme -->
+    <style name="Theme.Bibliothéque" parent="Base.Theme.Bibliothéque" />
+
+    <!-- Theme without ActionBar (optional) -->
+    <style name="Theme.Bibliothéque.NoActionBar" parent="Base.Theme.Bibliothéque">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Style for the AppBar -->
+    <style name="Theme.Bibliotheque.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Customize attributes here if needed -->
+    </style>
+
+    <!-- Style for the Popup -->
+    <style name="Theme.Bibliotheque.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Customize attributes here if needed -->
+    </style>
+</resources>
