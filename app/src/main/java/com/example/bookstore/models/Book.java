@@ -1,4 +1,3 @@
-// File: src/main/java/com/example/bookstore/models/Book.java
 package com.example.bookstore.models;
 
 import androidx.room.Entity;
@@ -12,25 +11,39 @@ public class Book {
     private String title;
     private String author;
     private double price;
-    private boolean isFavorite; // New field for favorite status
+    private boolean isFavorite; // Field for favorite status
+    private String imageUri; // Field for image URI
 
     // Constructor for Room (include all fields)
-    public Book(int id, String title, String author, double price, boolean isFavorite) {
+    public Book(int id, String title, String author, double price, boolean isFavorite, String imageUri) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.price = price;
         this.isFavorite = isFavorite;
+        this.imageUri = imageUri;
     }
 
     // Constructor without ID (ignored by Room)
+    @Ignore
+    public Book(String title, String author, double price, String imageUri) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.isFavorite = false; // Default to not favorite
+        this.imageUri = imageUri;
+    }
+
+    // Constructor without image URI (for backward compatibility)
     @Ignore
     public Book(String title, String author, double price) {
         this.title = title;
         this.author = author;
         this.price = price;
         this.isFavorite = false; // Default to not favorite
+        this.imageUri = null;
     }
+
 
     // Getters and Setters
     public int getId() { return id; }
@@ -47,4 +60,7 @@ public class Book {
 
     public boolean isFavorite() { return isFavorite; }
     public void setFavorite(boolean favorite) { isFavorite = favorite; }
+
+    public String getImageUri() { return imageUri; }
+    public void setImageUri(String imageUri) { this.imageUri = imageUri; }
 }

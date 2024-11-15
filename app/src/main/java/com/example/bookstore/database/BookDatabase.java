@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import com.example.bookstore.models.Book;
 
-@Database(entities = {Book.class}, version = 2)
+@Database(entities = {Book.class}, version = 3)
 public abstract class BookDatabase extends RoomDatabase {
     private static BookDatabase instance;
 

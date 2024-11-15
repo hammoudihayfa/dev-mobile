@@ -1,4 +1,3 @@
-// File: src/main/java/com/example/bookstore/activities/MainActivity.java
 package com.example.bookstore.activities;
 
 import android.content.Intent;
@@ -140,13 +139,20 @@ public class MainActivity extends AppCompatActivity {
                 Collections.sort(filteredBookList, (b1, b2) -> Double.compare(b2.getPrice(), b1.getPrice()));
                 break;
         }
-        bookAdapter.notifyDataSetChanged();
+        refreshBookImages(); // Ensure book images are refreshed after sorting
     }
 
     private void toggleFavoritesView() {
         isViewingFavorites = !isViewingFavorites;
         viewFavoritesButton.setText(isViewingFavorites ? "View All" : "View Favorites");
         loadBooks(); // Reload the books based on the current view mode
+    }
+
+    private void refreshBookImages() {
+        for (int i = 0; i < filteredBookList.size(); i++) {
+            Book book = filteredBookList.get(i);
+            bookAdapter.notifyItemChanged(i); // Ensure images are refreshed
+        }
     }
 
     @Override

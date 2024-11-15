@@ -1,22 +1,38 @@
-<!-- File: res/layout/activity_edit_book.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Toolbar for Back Navigation -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:contentDescription="Back Icon" />
+    </RelativeLayout>
+    <!-- Title input -->
     <EditText
         android:id="@+id/editTitleEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Title" />
 
+    <!-- Author input -->
     <EditText
         android:id="@+id/editAuthorEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Author" />
 
+    <!-- Price input -->
     <EditText
         android:id="@+id/editPriceEditText"
         android:layout_width="match_parent"
@@ -24,10 +40,19 @@
         android:hint="Price"
         android:inputType="numberDecimal" />
 
+    <!-- ImageView for book image -->
+    <ImageView
+        android:id="@+id/editBookImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_placeholder_image" />
+
+    <!-- Save button -->
     <Button
         android:id="@+id/saveEditButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

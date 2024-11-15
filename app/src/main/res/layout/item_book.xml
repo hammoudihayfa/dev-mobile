@@ -6,41 +6,68 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/bookTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/bookAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Author"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/bookPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:textSize="16sp" />
-
-    <!-- Favorite and Action Buttons -->
+    <!-- Row with Image and Text Details -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        android:gravity="end">
+        android:gravity="center_vertical">
+
+        <!-- Book Image -->
+        <ImageView
+            android:id="@+id/bookImageView"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_placeholder_image"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Book Image" />
+
+        <!-- Book Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bookTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/bookAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/bookPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Favorite Icon and Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
 
         <!-- Favorite Icon -->
         <ImageView
             android:id="@+id/favoriteIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:src="@drawable/ic_favorite_border"
             android:contentDescription="Favorite Icon"
             android:layout_marginEnd="8dp" />
@@ -50,14 +77,14 @@
             android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit" />
+            android:text="Edit"
+            android:layout_marginEnd="8dp" />
 
         <!-- Delete Button -->
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
-            android:layout_marginStart="8dp" />
+            android:text="Delete" />
     </LinearLayout>
 </LinearLayout>
