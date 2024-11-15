@@ -27,4 +27,7 @@ public interface BookDao {
 
     @Delete
     void delete(Book book);
+
+    @Query("SELECT * FROM books WHERE isFavorite = 1")
+    List<Book> getFavoriteBooks();
 }

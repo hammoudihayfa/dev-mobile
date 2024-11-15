@@ -1,16 +1,16 @@
+// File: src/main/java/com/example/bookstore/repository/BookRepository.java
 package com.example.bookstore.repository;
+
 import android.content.Context;
-import androidx.lifecycle.LiveData;
 import com.example.bookstore.database.BookDao;
 import com.example.bookstore.database.BookDatabase;
 import com.example.bookstore.models.Book;
-
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class BookRepository {
-    private final com.example.bookstore.database.BookDao bookDao;
+    private final BookDao bookDao;
     private final ExecutorService executorService;
 
     public BookRepository(Context context) {
@@ -27,10 +27,13 @@ public class BookRepository {
         return bookDao.getAllBooks();
     }
 
-    public Book getBookById(int bookId) {
-        return bookDao.getBookById(bookId); // Ensure this method is implemented in BookDao
+    public List<Book> getFavoriteBooks() {
+        return bookDao.getFavoriteBooks();  // Call to get favorite books
     }
 
+    public Book getBookById(int bookId) {
+        return bookDao.getBookById(bookId);
+    }
 
     public void update(Book book) {
         executorService.execute(() -> bookDao.update(book));

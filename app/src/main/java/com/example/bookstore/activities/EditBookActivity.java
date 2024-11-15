@@ -41,7 +41,6 @@ public class EditBookActivity extends AppCompatActivity {
             return;
         }
 
-        // Load book details asynchronously
         loadBookDetails(bookId);
 
         saveButton.setOnClickListener(v -> saveChanges());
@@ -49,7 +48,7 @@ public class EditBookActivity extends AppCompatActivity {
 
     private void loadBookDetails(int bookId) {
         executorService.execute(() -> {
-            Book book = bookRepository.getBookById(bookId);
+            Book book = bookRepository.getBookById(bookId); // Ensure this method exists
             if (book != null) {
                 runOnUiThread(() -> {
                     titleEditText.setText(book.getTitle());
@@ -77,21 +76,31 @@ public class EditBookActivity extends AppCompatActivity {
             return;
         }
 
-        Book updatedBook = new Book(bookId, title, author, price);
+        // Retrieve the original book object to get its isFavorite status
         executorService.execute(() -> {
-            bookRepository.update(updatedBook);
-            runOnUiThread(() -> {
-                Toast.makeText(this, "Book updated!", Toast.LENGTH_SHORT).show();
-                setResult(RESULT_OK);  // Set the result to OK
-                finish();
-            });
+            Book originalBook = bookRepository.getBookById(bookId);
+            if (originalBook != null) {
+                boolean isFavorite = originalBook.isFavorite();
+                Book updatedBook = new Book(bookId, title, author, price, isFavorite);
+
+                bookRepository.update(updatedBook); // Ensure update method is implemented in BookRepository
+
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Book updated!", Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_OK);
+                    finish();
+                });
+            } else {
+                runOnUiThread(() -> Toast.makeText(this, "Error updating book", Toast.LENGTH_SHORT).show());
+            }
         });
     }
-
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        executorService.shutdown();
+        if (executorService != null && !executorService.isShutdown()) {
+            executorService.shutdown();
+        }
     }
 }

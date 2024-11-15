@@ -1,22 +1,46 @@
 <!-- File: res/layout/activity_main.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- Search View for searching books -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search books..." />
+
+    <!-- Sorting options Spinner -->
+    <Spinner
+        android:id="@+id/sortSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <!-- Button to toggle favorite books view -->
+    <Button
+        android:id="@+id/viewFavoritesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Favorites"
+        android:layout_marginTop="8dp" />
+
+    <!-- RecyclerView for displaying books -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/addBookButton"
-        android:layout_marginBottom="16dp"/>
+        android:layout_weight="1" />
 
+    <!-- Add Book Button -->
     <Button
         android:id="@+id/addBookButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Book"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"/>
-</RelativeLayout>
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white" />
+</LinearLayout>
