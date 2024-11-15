@@ -1,4 +1,4 @@
-package tn.esprit.bibliothque;
+package com.example.bookstore;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("tn.esprit.bibliothque", appContext.getPackageName());
+        assertEquals("com.example.bookstore", appContext.getPackageName());
     }
 }

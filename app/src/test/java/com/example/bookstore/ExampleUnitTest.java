@@ -1,4 +1,4 @@
-package tn.esprit.bibliothque;
+package com.example.bookstore;
 
 import org.junit.Test;
 
